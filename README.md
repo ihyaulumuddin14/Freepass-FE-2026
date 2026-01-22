@@ -80,7 +80,7 @@ While original UI design is not mandatory, the app should be polished and intuit
 
 ## 🗂️ Submission Guidline
 1. [Fork this repository on GitHub](https://help.github.com/articles/fork-a-repo) then do the following:
-    * Setup an [Upstream remote](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork) to this repository `https://github.com/bccfilkom-fe/Freepass-FE-2025.git`.
+    * Setup an [Upstream remote](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork) to this repository `https://github.com/bccfilkom-fe/Freepass-FE-2026.git`.
     * [Sync your fork](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork) with the upstream.
 2. Clone your fork of the repository to your local computer
 3. Create a branch with a descriptive name to work (i.e., git checkout -b your-name).
