@@ -10,7 +10,7 @@ To pass this selection, you must complete this challenge according to the criter
 # 🌐🖥️ Web Challenge 
 
 ## 🎯 Objective
-Develop a website application platform using any Framework are available in the world, preferably **NextJs with Typescript** 
+Develop a website application platform using Framework  **NextJs with Typescript** 
 
 ## 🚀 Technical Requirements
 
