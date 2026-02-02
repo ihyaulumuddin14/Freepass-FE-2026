@@ -6,9 +6,9 @@ import { ReactNode, useEffect } from "react"
 export default function AuthInit({ children }: { children: ReactNode }) {
   const { fetchSession } = useSession()
 
-  // useEffect(() => {
-  //   fetchSession()
-  // }, [])
+  useEffect(() => {
+    fetchSession()
+  }, [])
 
   return children
 }

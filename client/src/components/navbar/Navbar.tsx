@@ -64,7 +64,7 @@ const Navbar = () => {
   const { user } = useSession();
 
   return (
-    <header className='w-full max-w-[1620px] p-6 lg:p-12 lg:py-8 border fixed top-0 left-1/2 -translate-x-1/2'>
+    <header className='w-full max-w-[1620px] p-6 lg:p-12 lg:py-8 fixed top-0 left-1/2 -translate-x-1/2'>
       <nav
         className="w-full h-14 flex justify-between gap-2 items-center bg-white/50 lg:bg-transparent rounded-md"
         >

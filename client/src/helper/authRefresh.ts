@@ -14,14 +14,18 @@ export function refreshAccessToken() {
     .then(res => {
       const token = res.data.accessToken
       privateApi.defaults.headers.common.Authorization = `Bearer ${token}`
-
+      
       const user = {
         displayName: res.data.user.displayName,
-        email: res.data.user.displayName,
+        email: res.data.user.email,
         role: res.data.user.role,
         avatarUrl: res.data.user.avatarUrl
       }
       return { user, token }
+    })
+    .catch ((error) => {
+      console.log(error)
+      throw new Error(error)
     })
     .finally(() => {
       refreshPromise = null

@@ -31,7 +31,7 @@ export default function AuthLayout({
         <p className="text-sm font-light text-center">{subtitle}</p>
       </header>
 
-      <main className="w-full max-w-lg p-5">
+      <main className="w-full max-w-lg p-2 lg:p-5">
         {children}
       </main>
 

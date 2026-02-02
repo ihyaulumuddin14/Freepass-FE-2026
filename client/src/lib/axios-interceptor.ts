@@ -1,4 +1,5 @@
 import { refreshAccessToken } from "@/helper/authRefresh";
+import { useSession } from "@/hooks/useSesssion";
 import axios from "axios";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
@@ -20,7 +21,8 @@ privateApi.interceptors.response.use(
         await refreshAccessToken()
         return privateApi(originalRequest)
       } catch {
-        // forceLogout()
+        // force logout
+        useSession.getState().logout()
       }
     }    
     return Promise.reject(error);

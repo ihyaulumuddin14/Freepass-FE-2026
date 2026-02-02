@@ -3,18 +3,22 @@
 import MainButton from '@/components/button/MainButton'
 import Checkbox from '@/components/checkbox/Checkbox'
 import Input from '@/components/input/Input'
+import Divider from '@/components/ui/divider'
+import Image from 'next/image'
 import { SignInCredentials, SignInSchema } from '@/schema/schema'
 import { signInService } from '@/services/auth.service'
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Check, Lock, UserRound } from 'lucide-react'
 import { AnimatePresence, motion } from 'motion/react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { useState } from 'react'
 import { Controller, useForm } from "react-hook-form"
 import { toast } from 'sonner'
+import { signIn } from "next-auth/react";
 
 const SignInForm = () => {
+  const searchParams = useSearchParams()
   const [onPasswordBlur, setOnPasswordBlur] = useState(false);
   const router = useRouter()
 
@@ -44,6 +48,24 @@ const SignInForm = () => {
       toast.error((error as Error).message)
     }
   };
+
+  const handleLoginWithGoogle = async () => {
+    try {
+      const response = await signIn("google", {
+        redirect: false,
+        callbackUrl: searchParams.get("callbackUrl") ?? "/home"
+      })
+      
+      if (!response?.ok) {
+        throw new Error(response?.error || "Failed to login with Google")
+      }
+      
+      toast.success("Login successfully")
+      router.replace(response.url ?? "/home")
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Failed to login with Google")
+    }
+  }
 
 
   return (
@@ -126,6 +148,18 @@ const SignInForm = () => {
         type="submit"
       >
         Sign In
+      </MainButton>
+
+      <Divider>Or continue with Google</Divider>
+
+      <MainButton
+        className='w-full'
+        variant='outline'
+        animated={false}
+        onClick={() => handleLoginWithGoogle()}
+      >
+        <Image src='/google_logo.png' width={20} height={20} alt='google_logo'/>
+        Google
       </MainButton>
     </form>
   )

@@ -28,7 +28,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((
           {...props}
           ref={ref}
           type={!reveal && isPassword ? 'password' : 'text'}
-          className='w-full h-full bg-secondary/10 rounded-md pl-18 text-md pt-4 pr-8 focus:border-primary transition-all'
+          className='w-full h-full bg-secondary/30 rounded-md pl-18 text-md pt-4 pr-8 focus:border-primary transition-all'
           placeholder={placeholder}
           />
     

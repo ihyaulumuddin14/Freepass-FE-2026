@@ -12,12 +12,6 @@ type useSessionType = {
 }
 
 export const useSession = create<useSessionType>(set => ({
-  // user: {
-  //   displayName: "Ulum",
-  //   email: "ulumuddinihya022@gmail.com",
-  //   role: "BARBER",
-  //   avatarUrl: ""
-  // } as User,
   user: null,
   accessToken: null,
   loading: true,
